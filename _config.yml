@@ -43,6 +43,7 @@ tabler-css-plugins:
   - tabler-flags
   - tabler-payments
   - tabler-vendors
+  - tabler-marketing
 
 exclude:
   - .jekyll-cache

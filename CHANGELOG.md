@@ -191,11 +191,93 @@ All notable changes to this project will be documented in this file.
 - fix #1308 - bad coloring in table in dark mode
 - fix #1273 - datepicker background color broken
 - fix `$prefix` hard coded `layout/_dark.scss`
-- fix #1275 remove last border-right on progress bar
-- fix #1261: broken offcanvas bg
+- fix #1275 - remove last border-right on progress bar
+- fix #1261 - broken offcanvas bg
 
 
 ## `1.0.0-beta14` - 2022-10-21
 
 - fix active items in dark mode
 - update Jekyll to newest version
+
+
+## `1.0.0-beta15` - 2022-11-01
+
+- new `badges` page
+- `<kbd>` styling
+- update icons to v1.109.0
+- `tom-select` border fix
+- exclude `playgrounds` from build
+- update jekyll to v4.3.1
+- fix: facebook color update
+- navbar aria atributes fixes
+- fix #808 - `navbar-menu` and `sidebar-menu` has the same `id`
+- fix #1335 - missing color variables usage in `alert` and `btn-ghost-*`
+- move border style to CSS variables
+- add missing forms
+- `btn-actions` fixes
+- replace `$text-muted` to css variable
+
+
+## `1.0.0-beta16` - 2022-11-12
+
+- new `Photogrid` page
+- `Steps` component improvements
+- fix #1348: Make job listing responsive for smaller devices
+- fix #1357: buttons group not active
+- fix #1352: fix deprecation warning
+- fix #1180: number input with `form-control-sm` looks weird
+- fix #1328: color input should show different color for inner check symbol on white ellipse
+- fix #1355 - missing font sizes
+- update icons to v1.111.0
+- homepage navbar fix
+- fix #1262 - `.bg-opacity-xx` class is not functioning properly
+
+
+## `1.0.0-beta17` - 2023-01-28
+
+- update `bootstrap` to v5.3.0
+- update icons to v2.1.2
+- add 72 new brands, browsers logos update
+- new `Trial ended` page
+- new `Page loader` page
+- new `Profile` page
+- headings fix
+- dropdown background color fix
+- fix rgba conversion bug
+- fix autofill text color, not matching in dark mode
+- update license
+- header html5 tags
+- add input with appended `<kbd>`
+- `bootstrap` import fix
+- font improvements
+- change `$body-color` to CSS variable
+- scrollbars improvements
+- move `@tabler/icons` to `dev-dependencies`
+- fix #1370: avatar stacked list is not stacked anymore
+
+
+## `1.0.0` - 2023-03-01
+
+**Version 1.0 of Tabler! 😍🤩**
+
+- new page: Cookie banner
+- update icons to v2.7.0
+- optimise images with `calibre/image-actions`
+- new docs
+- spacers unify
+- fix non full width selects #1392
+- fix bootstrap imports (#1477)
+- update dependencies
+- images optimization
+- flags border fix
+- fix color variables
+- scss build fix
+- fix #1440: more symmetry between modals and cards
+- dropdown shadow fix, colors fix
+- feat: dark mode lite colors improvement
+- fix #1464: avatars overlap transparently
+- fix #1426: TinyMCE drop down icon list transparent
+- fix #1453: Term of service page is truncated
+- added epayco Latin America payment gateway
+- add canonical urls

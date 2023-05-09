@@ -177,6 +177,7 @@ gulp.task('sass', () => {
 		.src(argv.withPlugins || BUILD ? `${srcDir}/scss/!(_)*.scss` : `${srcDir}/scss/+(tabler|demo).scss`)
 		.pipe(debug())
 		.pipe(sass({
+			includePaths: ['node_modules'],
 			style: 'expanded',
 			precision: 7,
 			importer: (url, prev, done) => {
@@ -363,7 +364,7 @@ gulp.task('build-jekyll', (cb) => {
 		env.JEKYLL_ENV = 'production'
 	}
 
-	return spawn('bundle', ['exec', 'jekyll', 'build', '--destination', demoDir, '--trace'], {
+	return spawn('bundle', ['exec', 'jekyll', 'build', '--destination', demoDir, '--trace', '--config', '_config.yml,_config_prod.yml'], {
 		env: env,
 		stdio: 'inherit'
 	})

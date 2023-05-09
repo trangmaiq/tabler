@@ -14,23 +14,28 @@
 }
 
 @mixin scrollbar($color: var(--#{$prefix}body-color-rgb)) {
+  #{if(&, "&", "*")} {
+    scrollbar-color: rgba(var(--#{$prefix}scrollbar-color, var(--#{$prefix}body-color-rgb)), .16) transparent;
+  }
+
   #{if(&, "&", "*")}::-webkit-scrollbar {
-    width: .5rem;
-    height: .5rem;
+    width: 1rem;
+    height: 1rem;
     @include transition(background $transition-time);
   }
 
   #{if(&, "&", "*")}::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background: rgba($color, .16);
+    border-radius: 1rem;
+    border: 5px solid transparent;
+    box-shadow: inset 0 0 0 1rem rgba(var(--#{$prefix}scrollbar-color, var(--#{$prefix}body-color-rgb)), .16);
   }
 
   #{if(&, "&", "*")}::-webkit-scrollbar-track {
-    background: rgba($color, .06);
+    background: transparent;
   }
 
   #{if(&, "&", "*")}:hover::-webkit-scrollbar-thumb {
-    background: rgba($color, .32);
+    box-shadow: inset 0 0 0 1rem rgba(var(--#{$prefix}scrollbar-color, var(--#{$prefix}body-color-rgb)), .32);
   }
 
   #{if(&, "&", "*")}::-webkit-scrollbar-corner {
@@ -73,34 +78,6 @@
       }
     }
   }
-}
-
-//
-// Button ghost
-//
-@mixin button-ghost-variant(
-  $color,
-  $color-hover: color-contrast($color),
-  $active-background: $color,
-  $active-border: $color,
-  $active-color: color-contrast($active-background)
-) {
-  --#{$prefix}btn-color: #{$color};
-  --#{$prefix}btn-bg: transparent;
-  --#{$prefix}btn-border-color: transparent;
-  --#{$prefix}btn-hover-color: #{$color-hover};
-  --#{$prefix}btn-hover-bg: #{$active-background};
-  --#{$prefix}btn-hover-border-color: #{$active-border};
-  --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
-  --#{$prefix}btn-active-color: #{$active-color};
-  --#{$prefix}btn-active-bg: #{$active-background};
-  --#{$prefix}btn-active-border-color: transparent;
-  --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
-  --#{$prefix}btn-disabled-color: #{$color};
-  --#{$prefix}btn-disabled-bg: transparent;
-  --#{$prefix}btn-disabled-border-color: transparent;
-  --#{$prefix}gradient: none;
-  --#{$prefix}btn-box-shadow: none;
 }
 
 //

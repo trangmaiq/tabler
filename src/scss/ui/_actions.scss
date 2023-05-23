@@ -1,0 +1,18 @@
+.action {
+  --#{$prefix}action-size: 2rem;
+  display: flex;
+  width: var(--#{$prefix}action-size);
+  height: var(--#{$prefix}action-size);
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--#{$prefix}border-radius); 
+
+  &:hover {
+    background: var(--#{$prefix}bg-surface-secondary);
+    cursor: pointer;
+  }
+}
+
+.actions-list {
+  @include elements-list;
+}

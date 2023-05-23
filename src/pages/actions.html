@@ -1,0 +1,45 @@
+---
+title: Actions
+description:
+  Actions page is a user-friendly interface featuring a diverse collection of
+  action buttons, each represented by a distinctive icon, designed to simplify
+  and streamline your navigation through various tasks and operations.
+---
+
+{% capture actions %}
+<div class="action" data-bs-toggle="tooltip" data-bs-placement="top" title="Clear search">{% include ui/icon.html icon="x" %}</div>
+<div class="action" data-bs-toggle="tooltip" data-bs-placement="top" title="Search settings">{% include ui/icon.html icon="adjustments" %}</div>
+<div class="action" data-bs-toggle="tooltip" data-bs-placement="top" title="Add notification">{% include ui/icon.html icon="bell" %}</div>
+<div class="action" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">{% include ui/icon.html icon="edit" %}</div>
+{% endcapture %}
+
+<div class="row">
+	<div class="col">
+		<div class="card">
+			<div class="card-body">
+				<div class="actions-list">{{ actions }}</div>
+			</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="card">
+			<div class="card-body">
+				<div class="mb-3">
+					<label class="form-label">Input with appended icon links</label>
+					<div class="input-group input-group-flat">
+						<input type="text" class="form-control" autocomplete="off" />
+
+						<span class="input-group-text">
+							<div class="actions-list">{{ actions }}</div>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga veritatis,
+		saepe aperiam non et excepturi voluptatibus adipisci rerum accusantium?
+		Beatae possimus fuga, voluptate deserunt facere ut magnam optio dolore
+		perspiciatis.
+	</div>
+</div>

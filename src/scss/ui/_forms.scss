@@ -203,6 +203,8 @@ Input group
 
   .input-group-text {
     background: $form-check-input-bg;
+    z-index: 1;
+    border-left: 0;
     @include transition($input-transition);
 
     &:first-child {

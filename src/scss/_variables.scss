@@ -13,6 +13,7 @@ $enable-cssgrid: true !default;
 
 // DARK MODE
 $color-mode-type: data !default;
+
 // ASSETS BASE
 $assets-base: ".." !default;
 
@@ -351,6 +352,7 @@ $avatar-sizes: (
 $avatar-border-radius: var(--#{$prefix}border-radius) !default;
 $avatar-font-size: $h4-font-size !default;
 $avatar-box-shadow: var(--#{$prefix}box-shadow-border) !default;
+$avatar-list-spacing: -.5;
 
 $link-decoration: none !default;
 $link-hover-decoration: underline !default;
@@ -509,7 +511,7 @@ $accordion-button-focus-border-color: $accordion-border-color !default;
 
 // Alerts
 $alert-padding-x: 1rem !default;
-$alert-padding-y: 1rem !default;
+$alert-padding-y: .75rem !default;
 $alert-link-font-weight: var(--#{$prefix}font-weight-bold) !default;
 
 $alert-border-width: var(--#{$prefix}border-width) !default;

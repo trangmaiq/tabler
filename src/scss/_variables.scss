@@ -346,9 +346,9 @@ $avatar-sizes: (
   "xs": 1.25rem,
   "sm": 2rem,
   "md": 2.5rem,
-  "lg": 5.5rem,
-  "xl": 7rem,
-  "2xl": 11rem,
+  "lg": 3rem,
+  "xl": 5rem,
+  "2xl": 7rem,
 ) !default;
 $avatar-border-radius: var(--#{$prefix}border-radius) !default;
 $avatar-font-size: $h4-font-size !default;

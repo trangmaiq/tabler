@@ -448,7 +448,7 @@ $spacers-extra: (
   12: $spacer-12,
 ) !default;
 
-$negative-spacers: null !default;
+$negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
 
 // Sizes
 $size-spacers: (

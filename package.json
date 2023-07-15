@@ -12,7 +12,8 @@
     "preview": "gulp build --preview",
     "svg-optimize": "svgo -f svg/brand --pretty",
     "unused-files": "node build/unused-files.js",
-    "release": "release-it",
+    "prerelease": "gulp build && gulp build-demo",
+    "release": "changeset publish",
     "svg-icons": "gulp svg-icons",
     "percy": "gulp build && npx percy snapshot demo",
     "bundlewatch": "bundlewatch",
@@ -131,10 +132,10 @@
     ]
   },
   "devDependencies": {
-    "@melloware/coloris": "^0.19.1",
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
     "@changesets/cli": "^2.26.1",
+    "@melloware/coloris": "^0.19.1",
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-replace": "^5.0.2",
@@ -174,7 +175,6 @@
     "plyr": "^3.7.8",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
-    "release-it": "^15.10.3",
     "request": "^2.88.2",
     "rollup": "2.79.1",
     "rollup-plugin-babel": "^4.4.0",
@@ -189,11 +189,13 @@
     "yargs": "^17.7.2"
   },
   "dependencies": {
+    "@changesets/changelog-github": "^0.4.8",
     "@popperjs/core": "^2.11.8",
     "@tabler/icons": "^2.25.0",
     "bootstrap": "5.3.0"
   },
   "peerDependencies": {
+    "@melloware/coloris": "^0.19.1",
     "apexcharts": "^3.40.0",
     "autosize": "^6.0.1",
     "choices.js": "^10.2.0",
@@ -209,8 +211,7 @@
     "plyr": "^3.7.8",
     "star-rating.js": "^4.3.0",
     "tinymce": "^6.4.2",
-    "tom-select": "^2.2.2",
-    "@melloware/coloris": "^0.19.1"
+    "tom-select": "^2.2.2"
   },
   "peerDependenciesMeta": {
     "@melloware/coloris": {
@@ -263,20 +264,6 @@
     },
     "star-rating.js": {
       "optional": true
-    }
-  },
-  "release-it": {
-    "hooks": {
-      "after:bump": "gulp build --latest-version ${latestVersion} --new-version ${version} && gulp build-demo",
-      "after:release": "echo Successfully released ${name} v${latestVersion} to ${repo.repository}."
-    },
-    "git": {
-      "requireCleanWorkingDir": false,
-      "addUntrackedFiles": true,
-      "tagName": "v${version}"
-    },
-    "github": {
-      "release": true
     }
   },
   "directories": {

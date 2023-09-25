@@ -4,6 +4,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { uiCdnUrl, uiUrl } from '@/config/site';
+import libsSrc from '../../src/pages/_data/libs.json';
 
 const previewHtml = (
   example,
@@ -64,11 +65,13 @@ const previewHtml = (
 	<title>Example</title>
 	<link rel="stylesheet" href="${assetsUrl}/dist/css/tabler.css">
 	${plugins ? plugins.map((plugin) => `	<link rel="stylesheet" href="${assetsUrl}/dist/css/tabler-${plugin}.css" />`) : ''}
+  ${vendors ? `<link rel="stylesheet" href="${assetsUrl}/dist/css/tabler-vendors.css" />` : ''}
+  ${libs ? libs.map((lib) => (libsSrc.css[lib] ? `<link rel="stylesheet" href="${assetsUrl}/dist/libs/${libsSrc.css[lib]}" />` : '')) : ''}
 </head>
 	<body class="h-100${background ? ` bg-${background}` : ''}${scrollable || fullpage ? ' auto-scroll' : ' no-scroll'}"${!background && ' style="--tblr-body-bg: #fbfcfd"'}>
-		 ${content}
-	${vendors ? `<link rel="stylesheet" href="${assetsUrl}/dist/css/tabler-vendors.css" />` : ''}
-	<script src="${assetsUrl}/dist/js/tabler.js"></script>
+		${content}
+	  <script src="${assetsUrl}/dist/js/tabler.js"></script>
+    ${libs ? libs.map((lib) => (libsSrc.js[lib] ? `<script src="${assetsUrl}/dist/libs/${libsSrc.js[lib]}"></script>` : '')) : ''}
 	</body>
 </html>`;
 };
@@ -107,14 +110,16 @@ export default function Example({
   });
 
   return (
-    <div className="example">
-      <iframe
-        className={clsx('example-frame', {
-          'example-frame-resizable': resizable,
-        })}
-        srcDoc={srcDoc}
-        style={{ height: iframeHeight }}
-      />
-    </div>
+    <>
+      <div className="example">
+        <iframe
+          className={clsx('example-frame', {
+            'example-frame-resizable': resizable,
+          })}
+          srcDoc={srcDoc}
+          style={{ height: iframeHeight }}
+        />
+      </div>
+    </>
   );
 }

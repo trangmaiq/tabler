@@ -1,6 +1,5 @@
 ---
 title: Range slider
-libs: nouislider
 ---
 
 To be able to use the range slider in your application you will need to install the nouislider dependency with `npm install nouislider`.
@@ -9,9 +8,22 @@ All options and features can be found [**here**](https://refreshless.com/nouisli
 
 ## Basic range slider
 
-```html code example centered
-<div data-slider='{"js-name": "slider0","start": 50,"range": {"min": 0,"max": 100}}'></div>
-<p demo-slider="slider0"></p>
+```html code example centered libs="nouislider" vendors
+<div class="form-range" id="range-color"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+	window.noUiSlider && (noUiSlider.create(document.getElementById('range-color'), {
+		start: 40,
+		connect: [true, false],
+		step: 10,
+		range: {
+			min: 0,
+			max: 100
+		}
+	}));
+});
+</script>
 ```
 
 That's only the basic features and options of range slider. More possibilities can be found [**here**](https://refreshless.com/nouislider/).

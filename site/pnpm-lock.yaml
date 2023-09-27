@@ -30,8 +30,8 @@ dependencies:
     specifier: ^8.0.1
     version: 8.0.1
   '@tabler/icons':
-    specifier: ^2.30.0
-    version: 2.30.0
+    specifier: ^2.35.0
+    version: 2.35.0
   '@tabler/icons-png':
     specifier: ^2.30.0
     version: 2.30.0
@@ -2894,6 +2894,10 @@ packages:
 
   /@tabler/icons@2.30.0:
     resolution: {integrity: sha512-tvtmkI4ALjKThVVORh++sB9JnkFY7eGInKxNy+Df7WVQiF7T85tlvGADzlgX4Ic+CK5MIUzZ0jhOlQ/RRlgXpg==}
+    dev: false
+
+  /@tabler/icons@2.35.0:
+    resolution: {integrity: sha512-qW/itKdmFvfGw6mAQ+cZy+2MYTXb0XdGAVhO3obYLJEfsSPMwQRO0S9ckFk1xMQX/Tj7REC3TEmWUBWNi3/o3g==}
     dev: false
 
   /@trysound/sax@0.2.0:

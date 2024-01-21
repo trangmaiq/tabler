@@ -1,6 +1,7 @@
 @import "config";
 @import "demo/highlight";
 @import "demo/examples";
+@import "demo/settings";
 
 .card-sponsor {
   background: var(--#{$prefix}primary-lt) no-repeat center/100% 100%;
@@ -94,50 +95,3 @@ $demo-icon-size: 4rem;
   }
 }
 
-//
-// Settings
-//
-.settings-btn {
-  position: fixed;
-  right: -1px;
-  top: 10rem;
-
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  box-shadow: $box-shadow;
-}
-
-.settings-scheme {
-  display: inline-block;
-  border-radius: 50%;
-  height: 3rem;
-  width: 3rem;
-  position: relative;
-  border: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
-    var(--#{$prefix}border-color);
-  box-shadow: $box-shadow;
-
-  &-light {
-    background: linear-gradient(135deg, $white 50%, $light 50%);
-  }
-
-  &-mixed {
-    background-image: linear-gradient(135deg, $dark 50%, #fff 50%);
-  }
-
-  &-transparent {
-    background: $light;
-  }
-
-  &-dark {
-    background: $dark;
-  }
-  
-  &-colored {
-    background-image: linear-gradient(
-      135deg,
-      var(--#{$prefix}primary) 50%,
-      $light 50%
-    );
-  }
-}

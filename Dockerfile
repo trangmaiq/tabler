@@ -8,6 +8,7 @@ ADD Gemfile.lock /app/
 ADD package.json /app/
 ADD pnpm-lock.yaml /app/
 ADD gulpfile.js /app/
+ADD src /app/src
 
 RUN apk add --virtual build-dependencies build-base npm
 RUN apk upgrade
